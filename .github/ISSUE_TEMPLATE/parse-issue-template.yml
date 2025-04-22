@@ -41,7 +41,7 @@ body:
       options:
         - "否"
         - "是"
-      default: "否"
+      default: 0
     validations:
       required: true
 
