@@ -31,15 +31,25 @@ body:
     attributes:
       label: "密码（如有）"
       placeholder: "1234"
+
+  # 是否是文件夹（默认值设为"否"）
   - type: dropdown
     id: is_folder
     attributes:
       label: "是否是文件夹分享？"
+      description: "默认按文件链接处理，若为文件夹请手动选择「是」。"
       options:
-        - "是"
         - "否"
+        - "是"
+      default: "否"
     validations:
       required: true
+      
+  - type: textarea
+    attributes:
+      value: "网盘类型?"
+  - type: input
+    id: pantype
 
   # 错误信息（选填）
   - type: textarea
