@@ -1,0 +1,86 @@
+---
+name: "lz.qaiu.top网盘解析问题反馈指引"
+description: "反馈网盘链接解析失败、下载错误等问题"
+title: "[网盘] 问题简述（如：解析失败/链接失效）"
+labels: ["网盘", "解析"]
+body:
+  - type: markdown
+    attributes:
+      value: "请提供详细的网盘链接和错误信息，以便快速定位问题。"
+  
+  # 问题描述（必填）
+  - type: textarea
+    id: description
+    attributes:
+      label: "问题描述"
+      description: "请简要描述您遇到的问题（例如：解析失败、返回错误信息、无法下载等）。"
+    validations:
+      required: true
+
+  # 网盘链接信息（必填）
+  - type: input
+    id: url
+    attributes:
+      label: "网盘链接"
+      description: "请提供完整的网盘链接（确保文件合法合规）。"
+      placeholder: "https://example.com/share/xxxx"
+    validations:
+      required: true
+  - type: input
+    id: password
+    attributes:
+      label: "密码（如有）"
+      placeholder: "1234"
+  - type: dropdown
+    id: is_folder
+    attributes:
+      label: "是否是文件夹分享？"
+      options:
+        - "是"
+        - "否"
+    validations:
+      required: true
+
+  # 错误信息（选填）
+  - type: textarea
+    id: error_log
+    attributes:
+      label: "错误信息"
+      description: "如果有错误信息，请粘贴解析结果（如 JSON 格式）。"
+      render: json
+      placeholder: |
+        {
+          "code": 500,
+          "msg": "错误详情...",
+          "success": false
+        }
+
+  # 其他补充信息（选填）
+  - type: markdown
+    attributes:
+      value: "### 其他补充信息（非必填）"
+  - type: input
+    id: screenshot
+    attributes:
+      label: "截图链接"
+      placeholder: "https://example.com/screenshot.png"
+  - type: input
+    id: network
+    attributes:
+      label: "网络环境"
+      placeholder: "家庭网络/公司内网/VPN"
+  - type: input
+    id: browser
+    attributes:
+      label: "浏览器信息"
+      placeholder: "Chrome 120.0.6099.212"
+  - type: textarea
+    id: extra_info
+    attributes:
+      label: "其他信息"
+      placeholder: "您认为可能相关的其他信息..."
+
+  - type: markdown
+    attributes:
+      value: "**感谢您的反馈！** 我们会尽快处理您的问题。"
+---
